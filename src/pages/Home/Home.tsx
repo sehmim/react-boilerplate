@@ -1,14 +1,18 @@
 import { ReactElement } from 'react'
+import styled from 'styled-components'
 
 import Layout from '../../layout'
-interface Props {
 
-}
+const Block = styled.div`
+    width: 100px;
+    height: 100px;
+    border: 1px solid red;
+`
 
-function Home({ }: Props): ReactElement {
+function Home(): ReactElement {
     return (
         <Layout>
-            Home
+            <Block ></Block>
         </Layout>
     )
 }

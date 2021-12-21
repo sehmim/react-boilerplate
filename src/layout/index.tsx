@@ -1,24 +1,29 @@
 import styled from 'styled-components'
+import { CSSReset } from './styles'
 
 const Wrapper = styled.div`
+  max-width: 1170px;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
 `
 const HeaderWrapper = styled.div`
-  border: 1px solid red;
-  height: 100px;
+  height: 20vh;
   width: 100%;
+  background-color: black;
+  color: white;
 `
 
 const Body = styled.div`
   margin: 0;
-  height: 100%;
+  min-height: 60vh;
 `
 
 const FooterWrapper = styled.div`
-  border: 1px solid red;
-  height: 100px;
+  height: 20vh;
   width: 100%;
+  background-color: black;
+  color: white;
 `
 
 type PropsType = {
@@ -27,13 +32,16 @@ type PropsType = {
 
 function Layout({ children }: PropsType) {
   return (
-    <Wrapper>
-      <Header />
-      <Body>
-        {children}
-      </Body>
-      <Footer />
-    </Wrapper>
+    <>
+      <CSSReset />
+      <Wrapper>
+        <Header />
+        <Body>
+          {children}
+        </Body>
+        <Footer />
+      </Wrapper>
+    </>
   )
 }
 
