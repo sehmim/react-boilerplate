@@ -17,8 +17,8 @@ function App() {
   const [isAuthenticated, setAuthenticated] = useState(true)
 
   return (
-    <BrowserRouter>
-      <ErrorBoundary FallbackComponent={ErrorFallback} >
+    <ErrorBoundary FallbackComponent={ErrorFallback} >
+      <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/auth" element={<Auth />} />
@@ -26,8 +26,8 @@ function App() {
           <Route path="/checkout" element={<Checkout />} />
         </Routes>
         {isAuthenticated && <PrivateRoutes />}
-      </ErrorBoundary>
-    </BrowserRouter>
+      </BrowserRouter>
+    </ErrorBoundary>
   );
 }
 
