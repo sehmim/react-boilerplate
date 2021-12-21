@@ -1,4 +1,5 @@
 import React, { ReactElement } from 'react'
+import Layout from '../../layout'
 
 interface Props {
 
@@ -6,9 +7,9 @@ interface Props {
 
 function Auth({ }: Props): ReactElement {
     return (
-        <div>
-
-        </div>
+        <Layout>
+            Auth
+        </Layout>
     )
 }
 

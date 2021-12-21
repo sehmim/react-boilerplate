@@ -1,14 +1,15 @@
-import React, { ReactElement } from 'react'
+import { ReactElement } from 'react'
 
+import Layout from '../../layout'
 interface Props {
 
 }
 
 function Home({ }: Props): ReactElement {
     return (
-        <div>
+        <Layout>
             Home
-        </div>
+        </Layout>
     )
 }
 

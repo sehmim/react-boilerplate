@@ -1,4 +1,5 @@
 import React, { ReactElement } from 'react'
+import Layout from '../../layout'
 
 interface Props {
 
@@ -6,9 +7,9 @@ interface Props {
 
 function Profile({ }: Props): ReactElement {
     return (
-        <div>
+        <Layout>
             Profile
-        </div>
+        </Layout>
     )
 }
 
