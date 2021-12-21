@@ -1,11 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux'
 import App from './App';
-import { BrowserRouter as Router } from "react-router-dom";
+
+import { createStore } from './store';
+
+export const store = createStore()
+export type AppDispatch = typeof store.dispatch
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Provider store={store}>
+      <App />
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );

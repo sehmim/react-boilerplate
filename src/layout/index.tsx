@@ -1,6 +1,7 @@
-import { useState } from 'react'
 import styled, { ThemeProvider } from 'styled-components'
-import { themes } from '../util/themes'
+import { useAppSelector } from '../hooks/rtk'
+import { Footer } from './Footer'
+import { Header } from './Header'
 import { CSSReset } from './styles'
 
 const Wrapper = styled.div`
@@ -12,14 +13,6 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
 `
-const HeaderWrapper = styled.div`
-  height: 15vh;
-  width: 100%;
-
-  color: ${props => props.theme.primaryColor};
-  border: 2px solid ${props => props.theme.primaryColor};
-  background: ${props => props.theme.secondaryColor};
-`
 
 const Body = styled.div`
   margin: 0;
@@ -29,28 +22,17 @@ const Body = styled.div`
   background: ${props => props.theme.primaryColor};
 `
 
-const FooterWrapper = styled.div`
-  height: 20vh;
-  width: 100%;
-
-  color: ${props => props.theme.primaryColor};
-  border: 2px solid ${props => props.theme.primaryColor};
-  background: ${props => props.theme.secondaryColor};
-`
-
 type PropsType = {
-  children: React.ReactNode,
-  theme?: String
+  children: React.ReactNode
 }
 
-function Layout({ children, theme }: PropsType) {
-
-  const [myTheme] = useState(theme ? theme : themes['defaultTheme'])
+function Layout({ children }: PropsType) {
+  const { theme } = useAppSelector((state) => state.UI)
 
   return (
     <>
       <CSSReset />
-      <ThemeProvider theme={myTheme}>
+      <ThemeProvider theme={theme}>
         <Wrapper>
           <Header />
           <Body>
@@ -62,14 +44,6 @@ function Layout({ children, theme }: PropsType) {
 
     </>
   )
-}
-
-function Header() {
-  return (<HeaderWrapper>Header</HeaderWrapper>)
-}
-
-function Footer() {
-  return (<FooterWrapper>Footer</FooterWrapper>)
 }
 
 export default Layout

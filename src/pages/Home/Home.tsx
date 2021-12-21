@@ -12,7 +12,7 @@ const Block = styled.div`
 function Home(): ReactElement {
     return (
         <Layout>
-            <Block ></Block>
+            Home Page
         </Layout>
     )
 }
