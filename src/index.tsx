@@ -1,12 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux'
+import { Provider } from 'react-redux';
 import App from './App';
+import { initTranslation } from './config/i18n';
+import { configStore } from './config/store';
 
-import { createStore } from './store';
+export const store = configStore()
 
-export const store = createStore()
-export type AppDispatch = typeof store.dispatch
+initTranslation()
 
 ReactDOM.render(
   <React.StrictMode>

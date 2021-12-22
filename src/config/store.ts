@@ -1,12 +1,12 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit'
-import { UISlice } from './slices'
+import { UISlice } from '../slices'
 
 
-const rootReducer = combineReducers({
+export const rootReducer = combineReducers({
     UI: UISlice
 })
 
-export const createStore = () =>
+export const configStore = () =>
     configureStore({
         reducer: rootReducer,
 
@@ -17,6 +17,3 @@ export const createStore = () =>
             })
         }
     })
-
-export const store = createStore()
-export type RootStateType = ReturnType<typeof rootReducer>
