@@ -1,8 +1,8 @@
 import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux"
-import { configStore, rootReducer } from "../config/store"
+import { rootReducer } from "../config/store"
+import { store } from '../index'
 
-// Create an instance to get the types of the dispatch and reducer from store
-const store = configStore()
+// Get the types of the dispatch and reducer from store
 export type AppDispatchType = typeof store.dispatch
 export type RootStateType = ReturnType<typeof rootReducer>
 

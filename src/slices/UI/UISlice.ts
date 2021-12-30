@@ -2,7 +2,6 @@ import { themes, ThemeType } from './../../util/themes';
 import { createSlice } from '@reduxjs/toolkit'
 import * as reducers from './reducers'
 
-
 export interface UIStateType {
     theme: ThemeType
 }
